@@ -33,11 +33,30 @@ app.use(express.json());
  * Server Activation
  */
 
-app.listen(PORT, () => {
-	console.log(`Listening on port ${PORT}`);
+
 
 
 	// CÓDIGO PARA ATENDER OS REQUERIMENTOS
-	// R01, R02, R03, R04, R05
+	class Aluno {
+		constructor(
+			readonly	Nome:string,
+			readonly	Idade:number,
+			readonly	Nota:number,)
+			{
+			}
 	
-});
+	}
+	
+		var aluno1 = new Aluno ('Alan', 16, 8,);
+		var aluno2 = new Aluno ('Charlie', 17, 10,);
+		var aluno3 = new Aluno ('Marta', 15, 9,);
+	
+		let alunos: Array<Aluno> = [aluno1, aluno2, aluno3,];
+	
+		var soma = aluno1.Nota + aluno2.Nota + aluno3.Nota;
+
+		console.log(Aluno);
+		console.log(alunos);
+		console.log(`A soma total das notas é: ${soma}`);
+
+
