@@ -32,31 +32,34 @@ app.use(express.json());
 /**
  * Server Activation
  */
-
-
-
-
 	// CÓDIGO PARA ATENDER OS REQUERIMENTOS
 	class Aluno {
 		constructor(
-			readonly	Nome:string,
-			readonly	Idade:number,
-			readonly	Nota:number,)
+			readonly	nome:string,
+  		readonly	idade:number,
+			readonly	nota:number,)
 			{
 			}
-	
+
 	}
-	
-		var aluno1 = new Aluno ('Alan', 16, 8,);
-		var aluno2 = new Aluno ('Charlie', 17, 10,);
-		var aluno3 = new Aluno ('Marta', 15, 9,);
-	
+
+		let aluno1 = new Aluno ('Lucas', 9, 9,);
+		let aluno2 = new Aluno ('Matheus', 10, 9,);
+		let aluno3 = new Aluno ('Amaral', 8, 7,);
+
 		let alunos: Array<Aluno> = [aluno1, aluno2, aluno3,];
+
+		const soma = (a:number, b:number) => a + b
+		const somenteNota = (a:Aluno) => a.nota
+		const somaDasNotas = alunos.map(somenteNota) .reduce(soma);
+
+console.log('a soma das notas é:', somaDasNotas);
+const ObjectsToCsv = require('objects-to-csv');
+
+	(async () => {
+		const csv = new ObjectsToCsv(alunos);
+		await csv.toDisk('./alunos.csv');
+	 
+		console.log(await csv.toString());
+	})();
 	
-		var soma = aluno1.Nota + aluno2.Nota + aluno3.Nota;
-
-		console.log(Aluno);
-		console.log(alunos);
-		console.log(`A soma total das notas é: ${soma}`);
-
-

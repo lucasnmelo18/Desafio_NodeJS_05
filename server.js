@@ -7,25 +7,25 @@ const ws = wb.addWorksheet('Alunos');
 
 const data = [
   {
-    "nome": "teste",
-    "email": "teste@gmail.com",
-    "celular": "123456789"
+      "nome" : "Charlie",
+      "Idade" : "19",
+      "Nota" : "9"
   },
   {
-  "nome": "teste",
-    "email": "teste@gmail.com",
-    "celular": "123456789"
+    "nome" : "Marcelo",
+    "Idade" : "18",
+    "Nota" : "10"
   },
   {
-  "nome": "teste",
-    "email": "teste@gmail.com",
-    "celular": "123456789"
-  }
+    "nome" : "Alan",
+    "Idade" : "17",
+    "Nota" : "8"
+  },
 ];
 const headingColumnNames = [
   "Nome",
-  "Email",
-  "Nota"
+  "Idade",
+  "Notas"
 ];
 
 let headingColumnIndex = 1;
@@ -37,9 +37,9 @@ let rowIndex = 2;
 data.forEach(record => {
   let ColumnIndex = 1;
   Object.keys(record).forEach(columnName => {
-    ws.cell(rowIndex, ColumnIndex++).string(record[columnName])
+    ws.cell(rowIndex, ColumnIndex++).string(record[columnName]);
   })
     rowIndex++
 })
 
-wb.write('alunos.xlsx');
+wb.write('alunos.csv');
